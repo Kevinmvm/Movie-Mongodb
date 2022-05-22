@@ -1,0 +1,47 @@
+GET http://localhost:3000/movies/
+###
+GET http://localhost:3000/movies/2
+#####
+PUT http://localhost:3000/movies/update
+Content-Type: application/json
+
+{
+    "id": 3,
+    "title": "El padrino parte 8080",
+    "genres": [
+        "Crime", "Drama"
+    ],
+    "year": 1994,
+    "director": "Frank Darabont",
+    "actors": [
+        "Tim Robbins",
+        "Ricard el profe",
+        "Bob Gunton",
+        "William Sadler",
+        "Clancy Brown",
+        "Gil Bellows"
+    ]
+}
+
+###
+PUT http://localhost:3000/movies/add
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "Dances with Wolves",
+    "genres": [
+        "Adventure", "Western ", "Drama"
+    ],
+    "year": 1990,
+    "director": "Kevin Costner",
+    "actors": [
+        "Kevin Costner",
+        "Mary McDonnell",
+        "Graham Greene",
+        "Rodney A. Grant"
+    ]
+}
+
+###
+DELETE http://localhost:3000/movies/1

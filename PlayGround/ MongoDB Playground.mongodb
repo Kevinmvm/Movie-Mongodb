@@ -1,0 +1,131 @@
+use ('movies');
+db.createCollection('movie');
+db.movie.insertMany([
+  {
+    "id": 1,
+    "title": "The Shawshank Redemption",
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+      "actors": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton",
+      "William Sadler",
+      "Clancy Brown",
+      "Gil Bellows"
+    ],
+    "year": 1994,
+    "director": "Frank Darabont"
+  },
+  {
+    "id": 2,
+    "title": "The Godfather",
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+      "actors": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Richard S. Castellano",
+      "Robert Duvall",
+      "Sterling Hayden"
+    ],
+    "year": 1972,
+    "director": "Francis Ford Coppola"
+  },
+  {
+    "id": 3,
+    "title": "The Godfather Part II",
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+      "actors": [
+      "Al Pacino",
+      "Robert Duvall",
+      "Diane Keaton",
+      "Robert De Niro",
+      "John Cazale",
+      "Talia Shire"
+    ],
+    "year": 1974,
+    "director": "Francis Ford Coppola"
+  },
+  {
+    "id": 4,
+    "title": "The Dark Knight",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+        "actors": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine",
+      "Maggie Gyllenhaal",
+      "Gary Oldman"
+    ],
+    "year": 2008,
+    "director": "Christopher Nolan"
+  },
+  {
+    "id": 5,
+    "title": "Schindler's List",
+    "genres": [
+      "Biography",
+      "Drama",
+      "History"
+    ],
+      "actors": [
+      "Liam Neeson",
+      "Ben Kingsley",
+      "Ralph Fiennes",
+      "Caroline Goodall",
+      "Jonathan Sagall",
+      "Embeth Davidtz"
+    ],
+    "year": 1994,
+    "director": "Steven Spielberg"
+  }
+]);
+db.movie.find();
+
+
+/*
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('mongodbVSCodePlaygroundDB');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.sales.drop();
+
+// Insert a few documents into the sales collection.
+
+
+
+
+// Run a find command to view items sold on April 4th, 2014.
+db.sales.find({ date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') } });
+
+// Build an aggregation to view total sales for each product in 2014.
+const aggregation = [
+  { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+];
+
+// Run the aggregation and open a cursor to the results.
+// Use toArray() to exhaust the cursor to return the whole result set.
+// You can use hasNext()/next() to iterate through the cursor page by page.
+db.sales.aggregate(aggregation);*/
