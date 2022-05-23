@@ -29,11 +29,19 @@ class Movies {
 
     async getMovies() {
         console.log("moviesMongo estoy en getMovies")
+        /* En memoria
         const moviesAll = await this.movies
         console.log(moviesAll)
         //return allMovies;
-        return await this.movies;
+        return await this.movies;*/
+
+        const database = client.db("movies");
+        const collection = database.collection("movie");
+        const moviesCursor = await collection.find({});
+        const moviesA = await moviesCursor.toArray();
+        return await moviesA;
     }
+
     async getMovieById(id) {
         console.log(`---> moviesMongo::getMovieById = ${id} Mongo`);
         const moviesAll = await this.movies
@@ -41,6 +49,7 @@ class Movies {
         const movieID = moviesAll.find(element => element.id == id);
         return movieID;
     }
+
     async createMovie(req) {
         console.log(`---> moviesMongo::createMovie = ${req.id}`);
         /* EN MEMORIA

@@ -53,6 +53,7 @@ class MoviesModel {
 
         await movie.createMovie(new_movie);
         //actor.createActors(new_actor);
+        
     }
 
     async updateMovie(req) {

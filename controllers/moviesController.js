@@ -37,7 +37,7 @@ const removeMovie = async (req, res, next) => {
 
     }
 
-    getAllMovies(req, res);
+    await getAllMovies(req, res);
 
 
 }
@@ -51,7 +51,7 @@ const createMovie = async (req, res, next) => {
     try {
 
         await moviesModel.createMovie(req.body);
-        getAllMovies(req, res);
+        await getAllMovies(req, res);
 
     } catch (error) {
         next(HttpError(400, { message: error.message }));
@@ -68,7 +68,7 @@ const updateMovie = async (req, res, next) => {
             next(HttpError(400, { message: messagesapp.parameter_not_especified }));
 
         await moviesModel.updateMovie(req.body);
-        getAllMovies(req, res);
+        await getAllMovies(req, res);
 
     } catch (error) {
         next(HttpError(400, { message: error.message }));
